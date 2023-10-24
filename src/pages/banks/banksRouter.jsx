@@ -9,7 +9,7 @@ function BanksRouter () {
     <Layout>
       <Routes>
         <Route path='/' element={<BankList />} />
-        <Route path='/detail/:tile' element={<h2>Aquie va el detalle </h2>} />
+        <Route path='/detail/:title' element={<h2>Aqui va la información a detalle del banco</h2>} />
       </Routes>
     </Layout>
 

@@ -10,7 +10,7 @@ export default function useBankList () {
 
   useFetch({
     url,
-    // params: { mode: 'no-cors'},
+    params: { mode: 'no-cors' },
     setData: setBanksState,
     setLoading: setLoadingState,
     setError: setErrorState
