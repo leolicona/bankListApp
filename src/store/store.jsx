@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import banksReducer from './slices/banksSlice'
+import banksReducer from './bankSlice/bankSlice'
 
 export const store = configureStore({
   reducer: {
