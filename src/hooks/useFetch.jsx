@@ -8,7 +8,6 @@ export default function useFetch ({ url, params, setData, setLoading, setError }
 
   useEffect(() => {
     const abortController = new AbortController()
-    // const paramsSignal = { ...params, signal: abortController.signal, mod: 'no-cors' }
     setController(abortController)
     setLoading(true)
     fetch(url, { signal: abortController.signal, ...params })

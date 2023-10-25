@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import useBankSlice from '../../store/bankSlice/useBankSlice'
-import { bankListData } from '../../mookups/data'
 import useFetch from '../../hooks/useFetch'
-const testUrl = 'https://fakestoreapi.com/products'
+import { saveToLocalStorage, getFromLocalStorage } from '../../utils/persistData'
 const url = 'https://dev.obtenmas.com/catom/api/challenge/banks'
 
 export default function useBankList () {
@@ -10,9 +9,7 @@ export default function useBankList () {
 
   useFetch({
     url,
-    // params: { mode: 'no-cors' },
-    // params: { headers: { 'Access-Control-Allow-Origin': '*' } },
-    setData: setBanksState,
+    setData: (data) => saveToLocalStorage({ key: 'banks', data, action: setBanksState }),
     setLoading: setLoadingState,
     setError: setErrorState
   })
