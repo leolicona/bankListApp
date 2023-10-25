@@ -11,19 +11,13 @@ export default function useBankList () {
   useFetch({
     url,
     // params: { mode: 'no-cors' },
-    params: { headers: { 'Access-Control-Allow-Origin': '*' } },
+    // params: { headers: { 'Access-Control-Allow-Origin': '*' } },
     setData: setBanksState,
     setLoading: setLoadingState,
     setError: setErrorState
   })
 
-  useEffect(() => {
-    if (banks.length === 0) {
-      setBanksState(bankListData)
-    }
-  }, [banks])
-
   return {
-    banks: banks || bankListData
+    banks
   }
 }

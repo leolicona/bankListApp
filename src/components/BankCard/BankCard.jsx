@@ -7,7 +7,7 @@ function BankCard ({ imageSrc, alt = '', title, description, age, action }) {
     <article className={style.container}>
       <h2 className={style.title}>{title}</h2>
       <img className={style.image} src={imageSrc} alt={alt} />
-      <p>{description}</p>
+      <p className={style.description}>{description}</p>
       <span>{`Socio desde ${age} años`}</span>
       <button className={style.button} onClick={action && action}>Ver más</button>
     </article>

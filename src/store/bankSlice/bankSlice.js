@@ -15,12 +15,10 @@ export const banksSlice = createSlice({
       state.banks = action.payload
     },
     setLoading: (state, action) => {
-      console.log('action.payload', action.payload)
       state.loading = action.payload
     },
     setError: (state, action) => {
       const { error } = action.payload
-      console.log('action.payload', action.payload)
       state.error = error
     }
 
