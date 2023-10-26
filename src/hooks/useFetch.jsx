@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function useFetch ({ url, params, setData, setLoading, setError }) {
+export default function useFetch ({ url, params = {}, setData, setLoading, setError }) {
   // const [data, setData] = useState(null)
   // const [loading, setLoading] = useState(false)
   // const [error, setError] = useState(null)
@@ -11,7 +11,7 @@ export default function useFetch ({ url, params, setData, setLoading, setError }
     setController(abortController)
     setLoading(true)
     console.log('Params: ', params)
-    fetch(url, { signal: abortController.signal, ...params })
+    fetch(url, { signal: abortController.signal, 'access-control-allow-origin': '*' })
       .then((response) => response.json())
       .then((data) => {
         setData(data)
