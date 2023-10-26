@@ -9,6 +9,7 @@ export default function useBankList () {
 
   useFetch({
     url,
+    params: { mode: 'cors' },
     setData: (data) => saveToLocalStorage({ key: 'banks', data, action: setBanksState }),
     setLoading: setLoadingState,
     setError: setErrorState
