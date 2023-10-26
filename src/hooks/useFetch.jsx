@@ -10,8 +10,7 @@ export default function useFetch ({ url, params = {}, setData, setLoading, setEr
     const abortController = new AbortController()
     setController(abortController)
     setLoading(true)
-    console.log('Params: ', params)
-    fetch(url, { /*  signal: abortController.signal, */ mode: 'no-cors' })
+    fetch(url, { signal: abortController.signal, ...params })
       .then((response) => response.json())
       .then((data) => {
         setData(data)
