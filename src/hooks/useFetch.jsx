@@ -11,7 +11,7 @@ export default function useFetch ({ url, params = {}, setData, setLoading, setEr
     setController(abortController)
     setLoading(true)
     console.log('Params: ', params)
-    fetch(url, { /*  signal: abortController.signal, */ 'access-control-allow-origin': '*' })
+    fetch(url, { /*  signal: abortController.signal, */ mode: 'cors' })
       .then((response) => response.json())
       .then((data) => {
         setData(data)
