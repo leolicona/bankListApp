@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 const proxy = {
   '/api': {
-    target: 'http://localhost:3000/dev.obtenmas.com/catom/api/challenge/banks',
+    target: 'https://neon-zabaione-5d8de5.netlify.app/dev.obtenmas.com/catom/api/challenge/banks',
     changeOrigin: true,
     rewrite: path => path.replace(/^\/api/, '')
   }
