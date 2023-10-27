@@ -9,7 +9,7 @@ export default function useBankList () {
   const { banks, setBanksState, setErrorState, setLoadingState } = useBankSlice()
 
   useFetch({
-    url,
+    url_,
     params: { },
     setData: (data) => saveToLocalStorage({ key: 'banks', data, action: setBanksState }),
     setLoading: setLoadingState,
