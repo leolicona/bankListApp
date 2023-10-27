@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { getFromLocalStorage } from '../../utils/persistData'
 
 const initialState = {
-  banks: getFromLocalStorage('banks') || [],
+  banks: /* getFromLocalStorage('banks') || */ [],
   loading: false,
   error: null
 
