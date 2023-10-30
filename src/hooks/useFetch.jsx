@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { bankListData } from '../mookups/data'
+import { getFromLocalStorage } from '../utils/persistData'
 
 export default function useFetch ({ url, params = {}, setData, setLoading, setError }) {
   // const [data, setData] = useState(null)
@@ -21,6 +23,8 @@ export default function useFetch ({ url, params = {}, setData, setLoading, setEr
           console.log('Fetch aborted')
         } else {
           setError({ error: true, message: error.message })
+          const getBanks = getFromLocalStorage('banks')
+          setData(getBanks || bankListData)
           setLoading(false)
         }
       })

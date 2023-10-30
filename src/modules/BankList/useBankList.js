@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import useBankSlice from '../../store/bankSlice/useBankSlice'
 import useFetch from '../../hooks/useFetch'
-import { saveToLocalStorage, getFromLocalStorage } from '../../utils/persistData'
+import { saveToLocalStorage } from '../../utils/persistData'
+import { bankListData } from '../../mookups/data'
 const url = 'https://dev.obtenmas.com/catom/api/challenge/banks'
-const url_ = '/api/challenge/banks'
-console.log('url', url_)
 
 export default function useBankList () {
   const { banks, setBanksState, setErrorState, setLoadingState } = useBankSlice()
